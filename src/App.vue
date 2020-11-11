@@ -1,26 +1,28 @@
+/* eslint-disable vue/no-unused-components */
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="flex h-screen bg-gray-200 font-roboto">
+      <Sidebar/>
+      <div class="flex-1 flex flex-col overflow-hidden">
+          <Header/>
+          <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200">
+              <div class="container mx-auto px-6 py-8">
+                  <router-view/>
+              </div>
+          </main>
+      </div>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Sidebar from './components/Sidebar';
+import Header from './components/Header';
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Sidebar,
+    Header
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
